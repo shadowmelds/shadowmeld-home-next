@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/public/js/jsm
+/public/markdown/*
+/public/music
+/public/photos/*
+/public/model
+
+*.css
+*.css.map

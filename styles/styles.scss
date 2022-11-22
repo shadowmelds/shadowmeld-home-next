@@ -1,0 +1,233 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+  url(../public/fonts/material_fonts/MaterialIconsOutlined-Regular.otf);
+}
+
+@font-face {
+  font-family: "Google Sans";
+  src: url(../public/fonts/sans-medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../public/fonts/icomoon.eot?mltk63');
+  src:  url('../public/fonts/icomoon.eot?mltk63#iefix') format('embedded-opentype'),
+  url('../public/fonts/icomoon.ttf?mltk63') format('truetype'),
+  url('../public/fonts/icomoon.woff?mltk63') format('woff'),
+  url('../public/fonts/icomoon.svg?mltk63#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.material-icons {
+  font-family: 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  opacity:0.2;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: var(--scrollbar-thumb);
+}
+
+:root {
+  --round-radius: 290486px;
+  --sizes-max-site-width: 700px;
+  --fontSizes-3xl: 2.25rem;
+  --fontSizes-2xl: 2rem;
+  --fontSizes-xl: 1.75rem;
+  --fontSizes-lg: 1.5rem;
+  --fontSizes-md: 1.25rem;
+  --fontSizes-sm: 1.125rem;
+  --fontSizes-xs: 1rem;
+  --fontSizes-2xs: 0.921875rem;
+  --fontSizes-3xs: 0.84375rem;
+  --space-2: 0.125rem;
+  --space-3: 0.1875rem;
+  --space-4: 0.25rem;
+  --space-6: 0.375rem;
+  --space-8: 0.5rem;
+  --space-10: 0.625rem;
+  --space-11: 0.6875rem;
+  --space-12: 0.75rem;
+  --space-14: 0.875rem;
+  --space-16: 1rem;
+  --space-18: 1.125rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+  --space-26: 1.625rem;
+  --space-28: 1.75rem;
+  --space-30: 1.875rem;
+  --space-32: 2rem;
+  --space-36: 2.25rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-52: 3.25rem;
+  --space-56: 3.5rem;
+
+  ---toolbarHeight: 56px;
+  ---totalToolbarHeight: 64px;
+  ---verticalContentPadding: var(--space-24);
+  ---floatingMargin: calc(var(---totalToolbarHeight) - var(---toolbarHeight));
+}
+
+/* 亮色模式 */
+.light, .light-mode, :root {
+
+  // 主题色
+  --primary-color: #42B983;
+  // 阴影
+  --box-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.2), 0 0px 0 1px rgba(#000000, 0.02);
+  // 顶部导航栏颜色
+  --colors-toolbar: rgba(235 240 251 / .75);
+  // 顶部导航栏阴影颜色
+  --colors-toolbar-glow: 45 82 171;
+  // 顶部导航栏颜色
+  --toolbar-color: rgba(255,255,255, .75);
+  // 顶部导航栏聚焦背景
+  --toolbar-highlight: rgba(45,82,171,.08);
+  // 页面背景色
+  --background-color: #fff;
+  // 项目表面颜色
+  --surface-color: #f8fafd;
+  --surface-color-2: #f3f6fc;
+  // 分割线颜色
+  --divider: #eee;
+  --colors-divider: rgba(9 17 34 / .12);
+  // 链接颜色
+  --accent: #6085de;
+  // 相反的 TextColor
+  --reverse-text-primary: #fff;
+  // 主要 TextColor
+  --text-primary: #191919;
+  --code-primary: #e96900;
+  --blog-text: #191919;
+  // 次要 TextColor
+  --text-secondary: rgba(9 17 34 / .8);
+  // 淡色 TextColor
+  --text-tertiary: rgba(9 17 34 / .6);
+  // 边框颜色
+  --border-color: #e1e2e4;
+  // 项目、Blog ItemColor
+  --item-color: #fff;
+  // ol 前缀计数背景色
+  --ol-color: #f8f9fa;
+  // 字段高亮背景色
+  --code-background: #f6f8fa;
+  // 滚动槽颜色
+  --scrollbar-track: #f7f7f7;
+  // 滚动滑块颜色
+  --scrollbar-thumb: #bdc1c6;
+  --colors-text-tertiary: rgba(9 17 34 / .6);
+  --dir-background: #e8eef8;
+  --divider-dark: #e1e3e1;
+  // SVG颜色
+  path {
+    fill: black;
+    fill-opacity: 1;
+  }
+
+  #light-mode {
+    display: none;
+  }
+  #dark-mode {
+    display: unset;
+  }
+}
+
+/* 暗色模式 */
+.dark, .dark-mode {
+  // 主题色
+  --primary-color: #42B983;
+  // 顶部导航栏颜色
+  --colors-toolbar: rgba(18 27 44 / .65);
+  // 顶部导航栏阴影颜色
+  --colors-toolbar-glow: 136 164 230;
+  // 顶部导航栏颜色
+  --toolbar-color: rgba(34,35,46, .75);
+  // 顶部导航栏聚焦背景
+  --toolbar-highlight: rgba(45,82,171,.08);
+  // 页面背景色
+  --background-color: #191a23;
+  // 项目表面颜色
+  --surface-color: #22232e;
+  --surface-color-2: #2d2f31;
+  // 分割线颜色
+  --divider: #606164;
+  --colors-divider: rgba(235 240 251 / .12);
+  // 链接颜色
+  --accent: #afc2ef;
+  // 相反的 TextColor
+  --reverse-text-primary: #212121;
+  // 主要 TextColor
+  --text-primary: #fff;
+  --blog-text: rgba(235 240 251 / .85);
+  --code-primary: #e96900;
+  // 次要 TextColor
+  --text-secondary: rgba(235 240 251 / .85);
+  // 淡色 TextColor
+  --text-tertiary: rgba(235 240 251 / .6);
+  // 边框颜色
+  --border-color: #606164;
+  // 项目、Blog ItemColor
+  --item-color: #22232e;
+  // ol 前缀计数背景色
+  --ol-color: #22232e;
+  // 字段高亮背景色
+  --code-background: #22232e;
+  // 滚动槽颜色
+  --scrollbar-track: #22232e;
+  // 滚动滑块颜色
+  --scrollbar-thumb: #606164;
+  --colors-text-tertiary: rgba(235 240 251 / .6);
+  --dir-background: #191a23;
+  --divider-dark: #606164;
+
+  // SVG颜色
+  path {
+    fill: white;
+    fill-opacity: 0.8;
+  }
+
+  #dark-mode {
+    display: none;
+  }
+  #light-mode {
+    display: unset;
+  }
+}

@@ -1,0 +1,17 @@
+{
+    "baseUrl": "/app/application/assets/img/",
+    "projects": [
+        {
+            "icon": "project_shadowmeld_site.png",
+            "name": "ShadowmeldHome",
+            "content": "目前这个网站",
+            "url": "https://github.com/shadowmelds/shadowmelds.github.io"
+        },
+        {
+            "icon": "project_shadowmeld_site.png",
+            "name": "ShadowmeldWebsite",
+            "content": "本网站的旧版本(Angular)",
+            "url": "https://github.com/shadowmelds/AndrewHomeSite"
+        }
+    ]
+}

@@ -1,0 +1,188 @@
+{
+    "baseUrl": "/app/application/assets/markdown/",
+    "tags": [
+        "软件开发",
+        "软件体验",
+        "杂七杂八",
+        "Android | 控件",
+        "Blender",
+        "开发工具",
+        "Linux"
+    ],
+    "years": [
+        "2022",
+        "2021",
+        "2020"
+    ],
+    "markdowns": {
+
+        "2022": [
+            {
+                "title": "Android Compose 做个翻页时钟",
+                "content": "用canvas API简单实现一个翻页时钟",
+                "url": "compose_flip_clock.md",
+                "image": "images/flip_clock_cover.jpg",
+                "date": "2022.1.9",
+                "tags": [
+                    "Android | 控件"
+                ]
+            },
+            {
+                "title": "常用开发软件设置代理",
+                "content": "不同软件设置代理的方式也各所不同",
+                "url": "proxy_set.md",
+                "image": "images/proxy_set.jpg",
+                "date": "2022.2.24",
+                "tags": [
+                    "开发工具"
+                ]
+            },
+            {
+                "title": "开发中常用命令",
+                "content": "很多命令一段时间没有使用后会忘记的",
+                "url": "commands.md",
+                "image": "images/commands.jpg",
+                "date": "2022.2.28",
+                "tags": [
+                    "开发工具"
+                ]
+            },
+            {
+                "title": "💻 各操作系统个性化体验",
+                "content": "一些小小的细节可以极大的提升操作系统使用体验",
+                "url": "system_up.md",
+                "image": "images/system_up.jpg",
+                "date": "2022.3.21",
+                "tags": [
+                    "软件体验"
+                ]
+            },
+            {
+                "title": "守望先锋英雄模型以及动画导入 Blender",
+                "content": "守望先锋英雄模型以及动画导入至Blender的小教程",
+                "url": "ow_import.md",
+                "image": "images/ow_import.jpg",
+                "date": "2022.5.12",
+                "tags": [
+                    "Blender"
+                ]
+            },
+            {
+                "title": "组装 PC 常见意外现象及问题判断",
+                "content": "2021-2022年工作中组装PC 出现问题的经验",
+                "url": "pc_problem.md",
+                "image": "images/pc_problem.jpg",
+                "date": "2022.7.18",
+                "tags": [
+                    "杂七杂八"
+                ]
+            },
+            {
+                "title": "软件开发-设计模式",
+                "content": "本文将使用 Koltin 列出常用设计模式",
+                "url": "design_pattern.md",
+                "image": "images/design_pattern.jpg",
+                "date": "2022.7.19",
+                "tags": [
+                    "软件开发"
+                ]
+            },
+            {
+                "title": "Linux Desktop 享受指南「基础环境篇」",
+                "content": "Linux Mint + Gnome 打造极佳体验的Linux桌面环境",
+                "url": "enjoy_linux_gnome.md",
+                "image": "images/enjoy_linux_gnome.jpg",
+                "date": "2022.1.20",
+                "tags": [
+                    "Linux"
+                ]
+            },
+            {
+                "title": "Linux Desktop 享受指南「远程环境篇」",
+                "content": "在Windows、Android上连接SSH、Samba、SFTP",
+                "url": "enjoy_linux_server.md",
+                "image": "images/enjoy_linux_server.jpg",
+                "date": "2022.8.11",
+                "tags": [
+                    "Linux"
+                ]
+            },
+            {
+                "title": "搭建个人服务器（内网穿透）",
+                "content": "使用个人硬件搭建个人服务器的流程",
+                "url": "build_server.md",
+                "image": "images/build-server.jpg",
+                "date": "2022.8.14",
+                "tags": [
+                    "Linux"
+                ]
+            },
+            {
+                "title": "CG 动画创作流程",
+                "content": "CG 动画创作流程",
+                "url": "cg_create.md",
+                "image": "images/c1e5dbaf2e73e94937f6db04e94b384088fe8cfe.jpg",
+                "date": "2022.8.14",
+                "tags": [
+                    "Blender"
+                ]
+            },
+            {
+                "title": "本网站的原型设计",
+                "content": "本网站的设计与开发",
+                "url": "shadowmeld_home_design.md",
+                "image": "images/shadowmeld_home_design.png",
+                "date": "2022.9.17",
+                "tags": [
+                    "软件开发"
+                ]
+            }
+        ],
+
+        "2021": [
+            {
+                "title": "个人介绍",
+                "content": "所有关于我的个人介绍",
+                "url": "shadowmeld_info.md",
+                "image": "images/shadowmeld.png",
+                "date": "2021.11.15",
+                "tags": [
+                    "杂七杂八"
+                ]
+            },
+            {
+                "title": "解决 NodeJS 安装 SASS 出现各种报错问题",
+                "content": "踩坑 npm&python 环境问题",
+                "url": "fix_node_sass_install.md",
+                "image": "images/2021-12-30_082722.png",
+                "date": "2021.12.30",
+                "tags": [
+                    "开发工具"
+                ]
+            }
+        ],
+
+        "2020": [
+            {
+                "title": "草稿",
+                "content": "草稿",
+                "url": "sketch.md",
+                "image": "images/shadowmeld.png",
+                "date": "none",
+                "tags": [
+                    "杂七杂八"
+                ]
+            },
+            {
+                "title": "我使用了哪些工具？",
+                "content": "了解我使用哪些软件和设备",
+                "url": "uses.md",
+                "image": "images/012.jpg",
+                "date": "2020.8.31",
+                "tags": [
+                    "开发工具"
+                ]
+            }
+        ]
+    }
+}

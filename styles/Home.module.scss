@@ -1,0 +1,366 @@
+
+.features {
+  color: var(--text-secondary);
+
+  a {
+    color: var(--text-secondary);
+  }
+
+  .app-container {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-column-gap: 1em;
+  }
+
+  img.info-logo {
+    align-self: center;
+    justify-self: end;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    -webkit-filter: drop-shadow(0 1px 2px rgba(var(--shadow-color), 0.04));
+    filter: drop-shadow(0 1px 2px rgba(var(--shadow-color), 0.04));
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .hello {
+    font-size: var(--fontSizes-2xl);
+    margin: auto;
+    font-weight: 700;
+    line-height: 1.5;
+    display: block;
+    text-shadow: var(--text-shadow-size) var(--text-shadow-size) 0 var(--text-shadow-color);
+    --text-shadow-color: var(--text-shadow-yellow);
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .text {
+    font-size: var(--fontSizes-xs);
+    box-sizing: inherit;
+    margin: var(--space-8);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .about_wave__2bBrx{
+    -webkit-animation-name:about_wave-animation__2OiPD;
+    animation-name:about_wave-animation__2OiPD;
+    -webkit-animation-duration:2.5s;
+    animation-duration:2.5s;
+    -webkit-animation-iteration-count:infinite;
+    animation-iteration-count:infinite;
+    transform-origin:70% 70%;
+    display:inline-block
+  }
+  @-webkit-keyframes about_wave-animation__2OiPD{
+    0%{transform:rotate(0deg)}
+    10%{transform:rotate(-10deg)}
+    20%{transform:rotate(12deg)}
+    30%{transform:rotate(-10deg)}
+    40%{transform:rotate(9deg)}
+    50%{transform:rotate(0deg)}to{transform:rotate(0deg)}
+  }
+  @keyframes about_wave-animation__2OiPD{
+    0%{transform:rotate(0deg);}
+    10%{transform:rotate(-10deg);}
+    20%{transform:rotate(12deg);}
+    30%{transform:rotate(-10deg);}
+    40%{transform:rotate(9deg);}
+    50%{transform:rotate(0deg);}
+    to{transform:rotate(0deg);}
+  }
+}
+
+.skills {
+
+  .skills-cta {
+    margin-bottom: 1.6em;
+    border-radius: 0.5em;
+    position: relative;
+    display: inline-block;
+    justify-content: flex-start;
+
+    .icon {
+      height: 22px;
+      width: 22px;
+      margin-right: 0.25em;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .button-text {
+      font-size: var(--fontSizes-xs)
+    }
+
+    #buttons {
+      background-color: white;
+      border-width: 2px;
+      box-shadow: 0 0 0 0.125em #E1E2E4;
+      padding: 2em;
+      margin-bottom: 1.6em;
+      border-radius: 0.5em;
+    }
+
+    .button {
+      background-color: rgb(61, 220, 132);
+      margin-right: 0.5rem;
+      transition: all .6s cubic-bezier(.165,.84,.44,1);
+      margin-bottom: 0.5rem;
+      color: #363636;
+      cursor: pointer;
+      border: 1px solid transparent;
+      font-size: 1rem;
+      line-height: 1.5;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .button.is-rounded {
+      border-radius: 290486px;
+    }
+
+    .skill {
+      border-color: transparent;
+      border-width: 1.2px;
+      box-shadow: 0 0 0 0.125em transparent;
+      position: relative;
+      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      &:hover,
+      &.is-hovered{
+        box-shadow: var(--box-shadow)
+      }
+      &::after {
+        content: ""; // 不知道为什么删掉这个就没阴影了
+        z-index: -1;
+        top: 0;
+        left: 0;
+        //width: 100%;
+        //height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .skills-bar-cta {
+    background-color: #3DDC84;
+    padding: 1em;
+    border-radius: 0.5em;
+    display: flex;
+    align-items: center;
+    /* 当属性改变时，浏览器会自动做动画 */
+    transition-property: background-color;
+    transition-duration: 0.5s;
+
+    #out-progress {
+      width: 70%;
+      border-radius: 8px;
+      background: linear-gradient(to right, #FFFFFF 70%, rgba(#FFFFFF, 0.4), rgba(#FFFFFF, 0.00));
+      height: 16px;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    #in-progress {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background: rgba(#3DDC84, 0.6);
+      //animation:progress 2s 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes progress {
+      0% {
+        width: 2%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    #skill-logo {
+      margin-left: 1em;
+      margin-right: 6px;
+      padding-bottom: 2px;
+      width: 34px;
+      height: 34px;
+    }
+
+    .text {
+      margin-right: 1.6em;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing:1px;
+      line-height:26px;
+      color: #3A414E;
+    }
+  }
+}
+
+.projects {
+
+  .project-cta {
+    display: flow-root;
+  }
+
+  .project-icon {
+    align-self: center;
+    width: 64px;
+    height: 64px;
+  }
+
+  .text-layout {
+    align-self: center;
+    margin-left: 1.1em;
+    min-width: 0;
+  }
+
+
+  .column {
+    padding: 0;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+    white-space: break-spaces;
+  }
+
+  .item {
+    position: relative;
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    border-radius: 0.5em;
+    padding: 1em 1.2em;
+    display: flex;
+    margin: var(--space-16) var(--space-8);
+    //box-shadow: 0 0 0 0.1em var(--border-color);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    min-width: 0;
+
+    &::after {
+      content: ""; // 不知道为什么删掉这个就没阴影了
+      border-radius: 5px;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 0 #E1E2E4;
+      -webkit-transform: scale(1.25, 1.25);
+      transform: scale(1, 1);
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    .item:hover::after {
+      opacity: 1;
+    }
+
+  }
+
+  .list-item .list {
+    color: #333;
+  }
+}
+
+//普通桌面端
+@media only screen and (min-width: 768px) {
+
+  .features {
+    .app-container {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr);
+      grid-template-columns: auto auto;
+      grid-column-gap: 1em;
+
+      .info-logo {
+        order: 1;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 1;
+      }
+      .hello {
+        align-self: flex-end;
+        order: 1;
+        line-height: 1.5;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+      .text {
+        order: 2;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+    }
+  }
+
+
+  .skills {
+
+    .skills-cta {
+      //background-color: var(--surface-color);
+      //padding: 2em 0;
+    }
+  }
+}
+
+// 大屏桌面端
+@media only screen and (min-width: 1200px) {
+
+  .columns {
+    display: flex;
+    gap: 3.5rem;
+    padding: 0 3.5rem;
+
+    .normal {
+      display: block;
+      flex: 1;
+      flex-basis: 0;
+      min-width: 0;
+    }
+
+    .desktop {
+      display: block;
+      flex: 1;
+      flex-basis: 0;
+      min-width: 0;
+    }
+  }
+
+}

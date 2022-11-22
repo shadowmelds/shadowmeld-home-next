@@ -1,0 +1,118 @@
+// 顶栏导航
+.navDrawer {
+  display: none;
+  min-width: 340px;
+  width: 340px;
+  background-color: var(--surface-color-2);
+  transition: all 0.2s ease-in-out 0s;
+  overflow: auto;
+  position: sticky;
+  height: 100vh;
+  top: 0;
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img.logo {
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+  }
+
+  img.icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  ul.mobile-menu-cta {
+    display: inline;
+  }
+
+  .actionIcon {
+    margin: 1rem 1.2rem 0.2rem;
+    border: none;
+    background: none;
+    min-height: 42px;
+    min-width: 42px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+
+    &:hover {
+      font-weight: bold;
+      background-color: var(--toolbar-highlight);
+    }
+
+    &:focus {
+      border: 2px solid var(--text-secondary);
+      border-radius: 50%;
+      outline: 0;
+    }
+  }
+
+  // TabLayout
+  ul {
+    &.tabs {
+      justify-content: flex-start;
+
+      .tab {
+
+        &:hover {
+          font-weight: bold;
+          background-color: var(--toolbar-highlight);
+        }
+
+        &:focus {
+          outline: 2px dashed var(--text-secondary);
+          outline-offset: 0.25rem;
+        }
+
+        a.tabCta {
+          color: var(--text-secondary);
+          padding: 0.6em 1.6em;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.25s ease-in-out;
+          pointer-events: auto;
+          border-radius: 8px;
+          border: none;
+          box-sizing: border-box;
+          display: flex;
+          text-align: center;
+          align-items: center;
+
+          span {
+            font-size: 1rem;
+            padding: 0 0 0 1em;
+            color: var(--text-secondary);
+          }
+        }
+      }
+    }
+
+    &.tabs.menu-btn-exit {
+      display: flex;
+    }
+  }
+
+  // 选中的 tab
+  .tabs li.current a {
+    background-color: var(--toolbar-highlight);
+
+    &:focus {
+      outline: 2px dashed var(--text-secondary);
+      outline-offset: 0.25rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .navDrawer {
+    display: block;
+  }
+}

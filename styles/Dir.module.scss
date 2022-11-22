@@ -1,0 +1,96 @@
+.dir.visible {
+  visibility: visible;
+  transform: translateX(0)!important;
+  transition: transform .2s cubic-bezier(.4,0,.2,1),-webkit-transform .2s cubic-bezier(.4,0,.2,1);
+}
+
+.dir {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  margin: 0;
+  width: auto;
+  max-width: 300px;
+  min-width: 300px;
+  bottom: 0;
+  display: block;
+  transform: translate(-300px);
+  transition: transform .2s cubic-bezier(.4,0,.2,1),-webkit-transform .2s cubic-bezier(.4,0,.2,1);
+  box-shadow: unset;
+
+  /* 设置滚动条的样式 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-button{
+    height: 25px;          /* 纵向滚动条 高度 */
+    background: transparent;
+    border-radius: 10px;
+  }
+  /* 滚动槽 */
+  ::-webkit-scrollbar-track {
+    background: var(--divider);
+    opacity:0.2;
+    border-radius: 8px;
+  }
+  /* 滚动条滑块 */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #c7c7c7;;
+  }
+
+  .dir-cta {
+    box-shadow: none;
+    position: unset;
+    max-height: unset;
+    height: 100vh;
+    margin: 0;
+    border: unset;
+    border-radius: 0 16px 16px 0;
+    box-sizing: border-box;
+    padding: var(--space-16) 0;
+    top: 0;
+    display: block;
+    overflow: auto;
+    align-self: flex-end;
+    border: 2px solid var(--border-color);
+    background-color: var(--surface-color);
+    border: unset;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+  .dir {
+    margin: 0;
+    min-width: 300px;
+    bottom: 0;
+    display: block;
+    top: 0;
+    box-shadow: 0 1px 2px 0 #bdc1c6;
+    z-index: 999;
+    position: unset;
+    transform: none;
+    visibility: visible;
+
+    .dir-cta {
+      box-sizing: border-box;
+      position: sticky;
+      padding: var(--space-16) 0;
+      top: 0;
+      display: block;
+      overflow: auto;
+      align-self: flex-end;
+      border: 2px solid var(--border-color);
+      background-color: var(--surface-color);
+      box-shadow: none;
+      height: 100vh;
+      border: unset;
+      border-radius: 0 16px 16px 0;
+
+    }
+  }
+}

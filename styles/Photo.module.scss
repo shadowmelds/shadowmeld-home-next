@@ -1,0 +1,114 @@
+.photo-cta {
+
+  .action-icon {
+    background-color: white;
+    align-self: end;
+  }
+
+  .root {
+    margin: 4em 2em 2em;
+  }
+
+  .dialog-mask {
+    display: none;
+    background-color: rgba(#21202F, .92);
+    //background: rgba(0,0,0,.4);
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    margin: auto;
+    padding: var(--space-32) ;
+    -webkit-transition: opacity .2s cubic-bezier(.4,0,.2,1),visibility .2s linear;
+    transition: opacity .2s cubic-bezier(.4,0,.2,1),visibility .2s linear;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 3;
+  }
+
+  .photo-preview-linear {
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-width: 74%;
+    max-height: 80%;
+    display: block;
+    align-self: center;
+    margin: auto;
+    background-color: var(--surface-color);
+    padding: var(--space-40) var(--space-56);
+    border-radius: var(--space-8);
+  }
+
+  .photo-preview-cta {
+    //height: 600px;
+    height: 95%;
+    text-align: center;
+    margin: 0 auto 0 auto;
+  }
+
+  .photo-preview {
+    max-height: 100%;
+    box-shadow: 0 8px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .is-display {
+    display: flex;
+  }
+
+  .photo-text {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-top: 1em;
+
+    .photo-description {
+      margin-right: 20px;
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
+  .mat-h2 {
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+  }
+
+  #img_wrap {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      margin: 2px;
+      position: relative;
+    }
+  }
+
+  .img_x {
+    background-color: violet;
+    position: relative;
+    cursor:pointer;
+  }
+
+  .img_x > img {
+    position: absolute;
+    vertical-align: bottom;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img_x > i {
+    display: block;
+    background-color: lightblue;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .photo-cta {
+    padding: 0 3.5rem;
+  }
+}

@@ -1,0 +1,393 @@
+.mat-progress-spinner {
+  display: inline;
+
+  &[mode=hidden] {
+    display: none;
+  }
+
+  &[mode=indeterminate] svg {
+    animation: mat-progress-spinner-linear-rotate 2000ms linear infinite;
+  }
+
+  svg {
+    transform: rotate(-90deg);
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    overflow: visible;
+  }
+  &[mode=indeterminate] circle {
+    transition-property: stroke;
+    animation-duration: 4000ms;
+    animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+    animation-iteration-count: infinite;
+  }
+  circle {
+    fill: rgba(0,0,0,0);
+    transition: stroke-dashoffset 225ms linear;
+  }
+  circle, .mat-spinner circle {
+    stroke: #3f51b5;
+  }
+
+  @keyframes mat-progress-spinner-linear-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes mat-progress-spinner-stroke-rotate-100 {
+    0% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotate(0);
+    }
+    12.5% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotate(0);
+    }
+    12.5001% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotateX(180deg) rotate(72.5deg);
+    }
+    25% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotateX(180deg) rotate(72.5deg);
+    }
+    25.0001% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotate(270deg);
+    }
+    37.5% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotate(270deg);
+    }
+    37.5001% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotateX(180deg) rotate(161.5deg);
+    }
+    50% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotateX(180deg) rotate(161.5deg);
+    }
+    50.0001% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotate(180deg);
+    }
+    62.5% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotate(180deg);
+    }
+    62.5001% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotateX(180deg) rotate(251.5deg);
+    }
+    75% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotateX(180deg) rotate(251.5deg);
+    }
+    75.0001% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotate(90deg);
+    }
+    87.5% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotate(90deg);
+    }
+    87.5001% {
+      stroke-dashoffset: 56.5486677px;
+      transform: rotateX(180deg) rotate(341.5deg);
+    }
+    100% {
+      stroke-dashoffset: 268.606171575px;
+      transform: rotateX(180deg) rotate(341.5deg);
+    }
+  }
+}
+
+
+
+.mat-progress-bar {
+  display: block;
+  height: 4px;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 250ms linear;
+  width: 100%;
+
+  &[mode=hidden] {
+    display: none;
+  }
+
+  .mat-progress-bar-buffer {
+    background-color: #cbd0e9;
+  }
+  .mat-progress-bar-buffer {
+    transform-origin: top left;
+    transition: transform 250ms ease;
+  }
+  .mat-progress-bar-element, .mat-progress-bar-fill::after {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  &[mode=indeterminate] .mat-progress-bar-primary, &[mode=query] .mat-progress-bar-primary {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    animation: mat-progress-bar-primary-indeterminate-translate 2000ms infinite linear;
+    left: -145.166611%;
+  }
+  &[mode=indeterminate] .mat-progress-bar-fill, &[mode=query] .mat-progress-bar-fill {
+    transition: none;
+  }
+  .mat-progress-bar-fill {
+    animation: none;
+    transform-origin: top left;
+    transition: transform 250ms ease;
+  }
+  .mat-progress-bar-element, .mat-progress-bar-fill::after {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  &[mode=indeterminate] .mat-progress-bar-primary.mat-progress-bar-fill::after, .mat-progress-bar[mode=query] .mat-progress-bar-primary.mat-progress-bar-fill::after {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    animation: mat-progress-bar-primary-indeterminate-scale 2000ms infinite linear;
+  }
+  .mat-progress-bar-fill::after {
+    animation: none;
+    content: "";
+    display: inline-block;
+    left: 0;
+  }
+  .mat-progress-bar-element, .mat-progress-bar-fill::after {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  .mat-progress-bar-fill:after {
+    background-color: #3f51b5;
+  }
+  @keyframes mat-progress-bar-primary-indeterminate-translate {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      animation-timing-function: cubic-bezier(0.5, 0, 0.701732, 0.495819);
+      transform: translateX(0);
+    }
+    59.15% {
+      animation-timing-function: cubic-bezier(0.302435, 0.381352, 0.55, 0.956352);
+      transform: translateX(83.67142%);
+    }
+    100% {
+      transform: translateX(200.611057%);
+    }
+  }
+  @keyframes mat-progress-bar-primary-indeterminate-scale {
+    0% {
+      transform: scaleX(0.08);
+    }
+    36.65% {
+      animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1);
+      transform: scaleX(0.08);
+    }
+    69.15% {
+      animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1);
+      transform: scaleX(0.661479);
+    }
+    100% {
+      transform: scaleX(0.08);
+    }
+  }
+
+
+  &[mode=indeterminate] .mat-progress-bar-secondary, &[mode=query] .mat-progress-bar-secondary {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    animation: mat-progress-bar-secondary-indeterminate-translate 2000ms infinite linear;
+    left: -54.888891%;
+    display: block;
+  }
+  &[mode=indeterminate] .mat-progress-bar-fill, &[mode=query] .mat-progress-bar-fill {
+    transition: none;
+  }
+  .mat-progress-bar-fill {
+    animation: none;
+    transform-origin: top left;
+    transition: transform 250ms ease;
+  }
+  .mat-progress-bar-element, .mat-progress-bar-fill::after {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  &[mode=indeterminate] .mat-progress-bar-secondary.mat-progress-bar-fill::after, &[mode=query] .mat-progress-bar-secondary.mat-progress-bar-fill::after {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    animation: mat-progress-bar-secondary-indeterminate-scale 2000ms infinite linear;
+  }
+  .mat-progress-bar-fill::after {
+    animation: none;
+    content: "";
+    display: inline-block;
+    left: 0;
+  }
+  .mat-progress-bar-element, .mat-progress-bar-fill::after {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  .mat-progress-bar-fill:after {
+    background-color: #3f51b5;
+  }
+
+  @keyframes mat-progress-bar-secondary-indeterminate-translate {
+    0% {
+      animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
+      transform: translateX(0);
+    }
+    25% {
+      animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
+      transform: translateX(37.651913%);
+    }
+    48.35% {
+      animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
+      transform: translateX(84.386165%);
+    }
+    100% {
+      transform: translateX(160.277782%);
+    }
+  }
+
+  @keyframes mat-progress-bar-secondary-indeterminate-scale {
+    0% {
+      animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685);
+      transform: scaleX(0.08);
+    }
+    19.15% {
+      animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712);
+      transform: scaleX(0.457104);
+    }
+    44.15% {
+      animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026);
+      transform: scaleX(0.72796);
+    }
+    100% {
+      transform: scaleX(0.08);
+    }
+  }
+}
+
+
+
+.snack-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+
+  &.show {
+    animation-name: page-animation;
+    animation-duration: 300ms;
+    animation-delay: 150ms;
+    animation-fill-mode: backwards;
+  }
+  &.removing {
+    -webkit-animation: fadeOut 500ms;
+    -moz-animation: fadeOut 500ms;
+    animation: fadeOut 500ms;
+  }
+
+  .snack-bar-container {
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 24px;
+    max-width: 33vw;
+    min-width: 344px;
+    padding: 4px 16px;
+    min-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 20px;
+    opacity: 1;
+    color: #ffffffb3;
+    background: #323232;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+
+    .snack-bar-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.975);
+      opacity: 0;
+    }
+  }
+
+  @keyframes page-animation {
+    0% {
+      transform: scale(0.975);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+.material-button {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  margin: 0;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  background: transparent;
+  font-family: Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+  color: var(--accent);
+
+  &:hover {
+    font-weight: bold;
+    background-color: var(--toolbar-highlight);
+  }
+}
+

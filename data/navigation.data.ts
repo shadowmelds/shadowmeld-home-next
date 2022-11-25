@@ -6,12 +6,12 @@ export interface NavigationData {
 export const navigationItem: NavigationData[] = [
     {
         name: "关于",
-        href: "/md-page#/2021/0"
+        href: "/blog/shadowmeld_info"
     },
-    {
-        name: "留言",
-        href: "comment"
-    },
+    // {
+    //     name: "留言",
+    //     href: "comment"
+    // },
     {
         name: "博客",
         href: "blog"
@@ -19,14 +19,6 @@ export const navigationItem: NavigationData[] = [
     {
         name: "照片",
         href: "photo"
-    },
-    {
-        name: "导图",
-        href: "dashboard"
-    },
-    {
-        name: "3D",
-        href: "example"
     },
     {
         name: "组件",

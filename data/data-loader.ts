@@ -1,39 +1,17 @@
 import {loadJson, styleMethod02} from "./utils";
-import {SkillData} from "./skill.data";
-import {ASSETS_URL} from "./config";
+import {baseSkillItem, SkillData} from "./skill.data";
 import {HeaderTabData, mainTabItem} from "./header-tab.data";
 import {NavigationData, navigationItem} from "./navigation.data";
-
-export function getSkillsData(callback) {
-    let skillList: SkillData[] = [];
-    loadJson(`${ASSETS_URL}/json/skills.json`, request => {
-        if (request != null) {
-            const skills = JSON.parse(request);
-            for (let skill of skills['skills']) {
-                skillList[skill.id] = {
-                    id: skill.id,
-                    title: skill.title,
-                    icon: skills['baseUrl'] + skill.icon,
-                    primary: skill.primary,
-                    iconColor: skill.iconColor,
-                    rating: skill.rating,
-                    titleColor: styleMethod02(skill.primary)
-                }
-            }
-        }
-        callback(skillList)
-    })
-}
+import {socialItem} from "./social.data";
+import {DEV_URL, Server_URL} from "./config";
 
 export async function getSkills() {
     let skillList: SkillData[] = [];
-    const request = await fetch(`${ASSETS_URL}/json/skills.json`);
-    const skills = await request.json()
-    for (let skill of skills['skills']) {
+    for (let skill of baseSkillItem) {
         skillList[skill.id] = {
             id: skill.id,
             title: skill.title,
-            icon: skills['baseUrl'] + skill.icon,
+            icon: `/icons/${skill.icon}`,
             primary: skill.primary,
             iconColor: skill.iconColor,
             rating: skill.rating,
@@ -43,20 +21,18 @@ export async function getSkills() {
     return skillList
 }
 
-export async function getSocials() {
-    const request = await fetch(`${ASSETS_URL}/json/socials.json`);
-    const socials = await request.json()
-    return socials['socials']
+export function getSocials() {
+    return socialItem
 }
 
 export async function getProjects() {
-    const request = await fetch(`${ASSETS_URL}/json/projects.json`);
+    const request = await fetch(`${DEV_URL}/json/projects.json`);
     const projects = await request.json()
     return projects['projects']
 }
 
 export async function getPhotos() {
-    const request = await fetch(`${ASSETS_URL}/json/photos.json`);
+    const request = await fetch(`${DEV_URL}/json/photos.json`);
     const photos = await request.json()
     return photos['photos']
 }
@@ -70,7 +46,12 @@ export function getNavigations(): NavigationData[] {
 }
 
 export async function getMarkdowns() {
-    const request = await fetch(`${ASSETS_URL}/json/markdowns.json`);
+    const request = await fetch(`${DEV_URL}/json/markdowns.json`);
+    return await request.json()
+}
+
+export async function getServerMarkdowns() {
+    const request = await fetch(`${Server_URL}/json/markdowns.json`);
     return await request.json()
 }
 

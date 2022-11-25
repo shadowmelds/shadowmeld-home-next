@@ -86,9 +86,6 @@
   }
 }
 
-#floating-button-menu {
-  visibility: visible;
-}
 
 //普通桌面端
 @media only screen and (min-width: 768px) {
@@ -101,15 +98,7 @@
     max-width: 860px;
   }
 
-  #floating-button-menu {
-    visibility: hidden;
-  }
-
   .post {
     padding: 0 3.5rem;
-  }
-
-  #floating-button-menu {
-    visibility: visible;
   }
 }

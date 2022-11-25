@@ -18,10 +18,9 @@ export default function Layout({dir = null, children}) {
     }, [])
 
     const [socialData, setSocialData] = useState([])
+
     useEffect(() => {
-        getSocials().then(response => {
-                setSocialData(response)
-        })
+        setSocialData(getSocials())
     }, [])
 
     return (
@@ -50,8 +49,6 @@ export default function Layout({dir = null, children}) {
                     {dir}
                 </Dir>
             }
-
-            <img className="reference" src='/desktop.png' alt='desktop'/>
         </>
     )
 }

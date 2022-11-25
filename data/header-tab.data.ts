@@ -9,18 +9,18 @@ export interface HeaderTabData {
 export const mainTabItem: HeaderTabData[] = [
     {
         tabId: "tab-about",
-        tabHref: "md-page#/2021/0",
+        tabHref: "blog/shadowmeld_info",
         tabEmoji: "🙋",
         tabText: "关于",
         icon: "contact_page_black_24dp.svg"
     },
-    {
-        tabId: "tab-comment",
-        tabHref: "comment",
-        tabEmoji: "💭",
-        tabText: "留言",
-        icon: "textsms_black_24dp.svg"
-    },
+    // {
+    //     tabId: "tab-comment",
+    //     tabHref: "comment",
+    //     tabEmoji: "💭",
+    //     tabText: "留言",
+    //     icon: "textsms_black_24dp.svg"
+    // },
     {
         tabId: "tab-blog",
         tabHref: "blog",

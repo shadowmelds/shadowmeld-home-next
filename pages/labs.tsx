@@ -1,20 +1,8 @@
 import Head from "next/head";
-import {scrollToAnchor} from "../data/utils";
 import React from "react";
 
 export default function Labs() {
 
-
-    const myData = [
-        "2022",
-        "2021",
-        "2020"
-    ]
-
-
-    const test = () => {
-        const a = require('')
-    }
     return (
         <>
             <Head>
@@ -27,54 +15,3 @@ export default function Labs() {
         </>
     )
 }
-
-function test () {
-    return (
-        <>
-            <ul>
-                <li className="dir-parent">
-                    <a className="dir-toggle scroll"
-                       href="#anchor-17">
-                        <span>5. 手动安装显卡、网卡驱动</span>
-                    </a>
-
-                    <ul className="dir-list">
-
-                        <li className="dir-item">
-                            <a className="dir-link scroll" href="#anchor-18">手动安装Nvidia显卡驱动过程</a>
-                            <ul className="dir-list"></ul>
-                        </li>
-                        <li className="dir-item"><a className="dir-link scroll" href="#anchor-19">手动安装网卡驱动</a>
-                            <ul className="dir-list">
-                                <li className="dir-item"><a className="dir-link dir-link-h4 scroll" href="#anchor-20">Realtek
-                                    网卡驱动安装</a></li>
-                                <li className="dir-item"><a className="dir-link dir-link-h4 scroll" href="#anchor-21">Intel
-                                    网卡驱动安装</a></li>
-                                <li className="dir-item"><a className="dir-link dir-link-h4 scroll" href="#anchor-22">Intel
-                                    Wi-Fi 网卡驱动安装</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </>
-    )
-}
-
-const App = () => <Component child1={<Item1 />} child2={<Item2 />} />
-
-const Component = ({child1, child2}) => {
-    return (
-        <div>
-            <div className="data1">
-                {child1}
-            </div>
-            <div className="data1">
-                {child2}
-            </div>
-        </div>
-    )
-}
-
-const Item1 = () => <p>Item 1</p>
-const Item2 = () => <p>Item 2</p>

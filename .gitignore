@@ -35,10 +35,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+.idea
 /public/js/jsm
-/public/markdown/*
+/public/js/three.js
+/public/js/three.module.js
+/public/markdown
 /public/music
-/public/photos/*
+/public/photos
 /public/model
 
 *.css

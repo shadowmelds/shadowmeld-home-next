@@ -1,15 +1,12 @@
 import style from "../styles/Blog.module.css";
 import Head from "next/head";
-import {getMainTabs, getMarkdowns, getNavigations, getSocials} from "../data/data-loader";
-import {useEffect, useRef, useState} from "react";
-import {ASSETS_URL} from "../data/config";
-import {loadJson, scrollToAnchor, switchDir} from "../data/utils";
+import {getMarkdowns, getServerMarkdowns} from "../data/data-loader";
+import {useEffect, useState} from "react";
+import {hideDir, loadJson, scrollToAnchor, scrollToTop, switchDir} from "../data/utils";
 import {LiveData, Observer} from "../data/livedata";
 import Layout from "../components/layout";
 
 export default function Blog({allMarkdowns, allTags, allYears}) {
-
-    console.log(`${allMarkdowns} | ${allTags.length} | ${allYears.length}`)
 
     const [selectedTags, setSelectedTags] = useState([allTags[0]])
     const [selectedMarkdowns, setSelectedMarkdowns] = useState(allMarkdowns)
@@ -22,9 +19,6 @@ export default function Blog({allMarkdowns, allTags, allYears}) {
     ))
 
     const switchSelectTag = (tag) => {
-        console.log(`origin0 ${JSON.stringify(mySelectedTags.mData)}`)
-
-        console.log(`点击了: ${tag.tagName}`)
 
         if (tag.index === 0) {
             if (mySelectedTags.mData.indexOf(tag) <= -1) {
@@ -50,12 +44,13 @@ export default function Blog({allMarkdowns, allTags, allYears}) {
             }
         }
 
-        console.log(`${mySelectedTags.mData.length == 1} | ${mySelectedTags.mData.length} | ${mySelectedTags.mData.findIndex(tag => tag.index === 0) > -1}`)
+
         if (mySelectedTags.mData.length == 1 && mySelectedTags.mData.findIndex(tag => tag.index === 0) > -1) {
             setSelectedMarkdowns(allMarkdowns)
         } else {
-            loadJson(`${ASSETS_URL}/json/markdowns.json`, request => {
-                let markdowns = JSON.parse(request);
+
+            getServerMarkdowns().then(markdowns => {
+
                 let displayData = markdowns["markdowns"]
 
                 for (let year in allMarkdowns) {
@@ -71,7 +66,7 @@ export default function Blog({allMarkdowns, allTags, allYears}) {
 
                         if (notContain) {
                             displayData[year].splice(
-                                displayData[year].findIndex(item => item.id === md.id),
+                                displayData[year].findIndex(item => item.url === md.url),
                                 1
                             )
                         }
@@ -86,7 +81,6 @@ export default function Blog({allMarkdowns, allTags, allYears}) {
 
                 setSelectedMarkdowns(displayData)
             })
-
         }
         select(selectedTags)
     }
@@ -113,6 +107,7 @@ export default function Blog({allMarkdowns, allTags, allYears}) {
 
     useEffect(() => {
         switchDir()
+        scrollToTop()
         select(selectedTags)
     })
 
@@ -141,7 +136,7 @@ export default function Blog({allMarkdowns, allTags, allYears}) {
 
                 <div className="floating-button-cta">
 
-                    <button className="floating-action-button floating-button-menu" id={style['floating-button-menu']}>
+                    <button className={`floating-action-button floating-button-menu ${style['floating-button-menu']}`} id='floating-button-menu'>
                         <span className="material-icons float-icon">menu</span>
                     </button>
 
@@ -182,19 +177,19 @@ export function Blogs({allYears, selectedMarkdowns}) {
                 {
                     allYears.map((year) => (
 
-                        <>
+                        <div key={year}>
                             {
-                                selectedMarkdowns[year] != null ? <>
+                                selectedMarkdowns[year] != null ? <div key={year}>
 
-                                    <div key={year} className={style['timeline-box']}><h4 className={style['timeline-h4']}>{year}</h4>
+                                    <div className={style['timeline-box']}><h4 className={style['timeline-h4']}>{year}</h4>
                                         <hr/>
                                     </div>
                                     <div className={`${style['is-ancestor']} ${style['single-blog-cta']}`}>
 
                                         {
-                                            selectedMarkdowns[year].reverse().map((markdown) => (
+                                            selectedMarkdowns[year].slice().reverse().map((markdown) => (
 
-                                                <a key={markdown} className={`${style.boox} ${style['blog-link']}`} href={`/blog/${markdown.url.replace(/\.md$/, '')}`}>
+                                                <a key={markdown.url} className={`${style.boox} ${style['blog-link']}`} href={`/blog/${markdown.url.replace(/\.md$/, '')}`}>
                                                     <div className={style['item']}>
                                                         <div className={style['image-layout']} id={`${markdown.url.replace(/\.md$/, '')}`}
                                                              style={{backgroundImage: `url('/markdown/${markdown.image}')`}}></div>
@@ -209,10 +204,10 @@ export function Blogs({allYears, selectedMarkdowns}) {
                                         }
 
                                     </div>
-                                </> : <></>
+                                </div> : <></>
                             }
 
-                        </>
+                        </div>
                     ))
                 }
 
@@ -228,11 +223,11 @@ export function BlogDir({allYears, selectedMarkdowns}) {
         <div className={style['blog-dir']}>
             {
                 allYears.map((year) => (
-                    <>
+                    <div key={year}>
                         {
                             selectedMarkdowns[year] != null ? <>
 
-                                <ul key={year}>
+                                <ul>
                                     <li className="dir-parent">
                                         <a className={style['dir-toggle']}>
                                             <span className={`${style['dir-arrow-down']} material-icons`}>event</span><span>{year}</span>
@@ -242,7 +237,10 @@ export function BlogDir({allYears, selectedMarkdowns}) {
                                                 selectedMarkdowns[year].map((markdown) => (
                                                     <li key={markdown.title} className={style['dir-item']}>
                                                         <a className={`${style['dir-link']} scroll`}
-                                                           onClick={()=>scrollToAnchor(`${markdown.url.replace(/\.md$/, '')}`)}>
+                                                           onClick={()=>{
+                                                               scrollToAnchor(`${markdown.url.replace(/\.md$/, '')}`)
+                                                               hideDir()
+                                                           }}>
                                                             {markdown.title}
                                                         </a>
                                                     </li>
@@ -254,7 +252,7 @@ export function BlogDir({allYears, selectedMarkdowns}) {
                                 </ul>
                             </> :<></>
                         }
-                    </>
+                    </div>
 
                 ))
             }
@@ -265,11 +263,6 @@ export function BlogDir({allYears, selectedMarkdowns}) {
 
 export async function getStaticProps() {
     let markdowns = await getMarkdowns()
-
-    // console.log(`${allMarkdowns.length} | ${allTags.length} | ${allYears.length}`)
-
-    console.log(`${markdowns}`)
-
     let tagData = markdowns['tags']
     let fullTag = []
     let allCount = 0

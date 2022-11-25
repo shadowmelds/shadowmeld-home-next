@@ -140,7 +140,6 @@ function imgbox(obj, i): void {
             obj.querySelector('i').style.paddingBottom = `${h / w * 100}%`
             obj.style.flexGrow = `${(w * 100) / h}`
             // obj.style.flexBasis = `${(w * (width * 0.33)) / h}px`
-            obj.style.flexBasis = `200px`
             if (i === 1 && isLoading) {
                 isLoading = false;
             }

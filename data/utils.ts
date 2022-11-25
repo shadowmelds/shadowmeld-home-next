@@ -1,8 +1,3 @@
-// import jQuery from "./js/jquery-3.6.0.min";
-
-import {useEffect} from "react";
-import style from "../styles/Blog.module.css";
-
 export function loadJson(url, request) {
     let xmlHttp: XMLHttpRequest;
     if (window.XMLHttpRequest) {
@@ -140,7 +135,7 @@ export function styleMethod02(color): string {
 
 export const switchDir = () => {
     if (typeof document !== 'undefined') {
-        let floatButtonMenu = document.getElementById(style['floating-button-menu'])
+        let floatButtonMenu = document.getElementById('floating-button-menu')
         let dir = document.getElementById('dir')
         let body = document.getElementsByTagName("body")[0]
         let html = document.getElementsByTagName("html")[0]
@@ -158,6 +153,20 @@ export const switchDir = () => {
             body.classList.remove('notscroll')
             html.classList.remove('notscroll')
         })
+    }
+}
+
+export const hideDir = () => {
+
+    if (typeof document !== 'undefined') {
+        let dir = document.getElementById('dir')
+        let body = document.getElementsByTagName("body")[0]
+        let html = document.getElementsByTagName("html")[0]
+        let sitemask = document.querySelector(".sitemask")
+        dir.classList.remove('visible')
+        sitemask.classList.remove('visible')
+        body.classList.remove('notscroll')
+        html.classList.remove('notscroll')
     }
 }
 

@@ -16,14 +16,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### 依赖环境：
 
 - NodeJS & NPM
-- Webpack
 - TypeScript
 - SASS
 
 ### 第三方库：
 
-- [SVG-Inject](https://github.com/iconfu/svg-inject)
-- [antvis/X6](https://github.com/antvis/X6)
+- [SVG-Inject](https://github.com/iconfu/svg-inject) SVG注入
+- [antvis/X6](https://github.com/antvis/X6) 思维导图
 
 ### 同步至Gitee：
 
@@ -57,3 +56,10 @@ WebStorm File Watch
 - Arguments `--target "ES5"`
 - Output paths to refresh `$FileNameWithoutExtension$.js:$FileNameWithoutExtension$.js.map`
 - Working directory `$FileDir$`
+
+部署
+
+```
+npm install next react react-dom
+next start
+```

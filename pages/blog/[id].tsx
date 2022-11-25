@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import Head from "next/head";
 import style from "../../styles/Post.module.css";
 import {getMarkdownContent, getMarkdowns} from "../../data/data-loader";
-import {scrollToAnchor, switchDir} from "../../data/utils";
+import {hideDir, scrollToAnchor, scrollToTop, switchDir} from "../../data/utils";
 
 export default function Post({url}) {
 
@@ -96,7 +96,7 @@ export default function Post({url}) {
 
                 <div className="floating-button-cta">
 
-                    <button className="floating-action-button floating-button-menu" id={style['floating-button-menu']}>
+                    <button className={`floating-action-button floating-button-menu ${style['floating-button-menu']}`} id='floating-button-menu'>
                         <span className="material-icons float-icon">menu</span>
                     </button>
 
@@ -172,13 +172,18 @@ export function PostDir({loadDir}) {
         if (loadDir == true && dirData == null) {
             if (typeof document !== 'undefined') {
                 initDir()
+                switchDir()
+                scrollToTop()
             }
         }
     })
 
     return (
         <div className={style['blog-dir']}>
-            <a className={`${style['dir-main-h1']} scroll`} onClick={()=>scrollToAnchor(`${h1.url}`)}>{h1 != null && h1.title}</a>
+            <a className={`${style['dir-main-h1']} scroll`} onClick={()=> {
+                scrollToAnchor(`${h1.url}`)
+                hideDir()
+            }}>{h1 != null && h1.title}</a>
             <div className={`divider ${style.divider}`}></div>
 
             {dirData &&
@@ -186,13 +191,15 @@ export function PostDir({loadDir}) {
                     {
                         dirData.map((dirItem) => (
 
-                            <>
+                            <div key={JSON.stringify(dirItem)} >
                                 {
                                     Object.keys(dirItem)[0] === 'h2' &&
-                                    <>
-                                        <li key={dirItem} className='dir-parent'>
+                                    <li className='dir-parent'>
                                             <a className={`${style['dir-toggle']} scroll`}
-                                               onClick={()=>scrollToAnchor(`${dirItem.h2.url}`)}>
+                                               onClick={()=> {
+                                                   scrollToAnchor(`${dirItem.h2.url}`)
+                                                   hideDir()
+                                               }}>
                                                 <span>{dirItem.h2.title}</span>
                                             </a>
 
@@ -201,21 +208,25 @@ export function PostDir({loadDir}) {
                                                 {
                                                     dirItem.h2.child.map((dirItemH34) => (
 
-                                                        <>
+                                                        <div key={JSON.stringify(dirItemH34)}>
                                                             {Object.keys(dirItemH34)[0] === 'h3' &&
 
                                                                 <li className={style['dir-item']}>
 
-                                                                    <a className={`${style['dir-link']} scroll`} onClick={()=>scrollToAnchor(`${dirItemH34.h3.url}`)}>{dirItemH34.h3.title}</a>
+                                                                    <a className={`${style['dir-link']} scroll`} onClick={()=> {
+                                                                        scrollToAnchor(`${dirItemH34.h3.url}`)
+                                                                        hideDir()
+                                                                    }}>{dirItemH34.h3.title}</a>
 
                                                                     <ul className="dir-list">
                                                                         {
                                                                             dirItemH34.h3.child.map((DirItemH4) => (
-                                                                                <>
-                                                                                    <li className={style['dir-item']}>
-                                                                                        <a className={`${style['dir-link']} ${style['dir-link-h4']} scroll`} onClick={()=>scrollToAnchor(`${DirItemH4.h4.url}`)}>{DirItemH4.h4.title}</a>
-                                                                                    </li>
-                                                                                </>
+                                                                                <li key={DirItemH4.title} className={style['dir-item']}>
+                                                                                    <a className={`${style['dir-link']} ${style['dir-link-h4']} scroll`} onClick={()=> {
+                                                                                        scrollToAnchor(`${DirItemH4.h4.url}`)
+                                                                                        hideDir()
+                                                                                    }}>{DirItemH4.h4.title}</a>
+                                                                                </li>
                                                                             ))
                                                                         }
                                                                     </ul>
@@ -223,14 +234,15 @@ export function PostDir({loadDir}) {
                                                             }
 
                                                             {Object.keys(dirItemH34)[0] === 'h4' &&
-                                                                <>
-                                                                    <li className={style['dir-item']}>
-                                                                        <a className={`${style['dir-link']} ${style['dir-link-h4']} scroll`} onClick={()=>scrollToAnchor(`${dirItemH34.h4.url}`)}>{dirItemH34.h4.title}</a>
-                                                                    </li>
-                                                                </>
+                                                                <li className={style['dir-item']}>
+                                                                    <a className={`${style['dir-link']} ${style['dir-link-h4']} scroll`} onClick={()=> {
+                                                                        scrollToAnchor(`${dirItemH34.h4.url}`)
+                                                                        hideDir()
+                                                                    }}>{dirItemH34.h4.title}</a>
+                                                                </li>
                                                             }
 
-                                                        </>
+                                                        </div>
 
                                                     ))
                                                 }
@@ -238,36 +250,37 @@ export function PostDir({loadDir}) {
                                             </ul>
 
                                         </li>
-                                    </>
 
                                 }
 
                                 {
 
                                     Object.keys(dirItem)[0] == 'h3' &&
-                                    <>
-                                        <ul className="dir-list">
-                                            <li className={style['dir-item']}>
-                                                <a className={`${style['dir-link']} scroll`}
-                                                   onClick={()=>scrollToAnchor(`${dirItem.h3.url}`)}>{dirItem.h3.title}</a>
+                                    <ul className="dir-list">
+                                        <li className={style['dir-item']}>
+                                            <a className={`${style['dir-link']} scroll`}
+                                               onClick={()=> {
+                                                   scrollToAnchor(`${dirItem.h3.url}`)
+                                                   hideDir()
+                                               }}>{dirItem.h3.title}</a>
 
-                                                <ul className="dir-list">
-                                                    {
-                                                        dirItem.h3.child.map((DirItemH4) => (
-                                                            <>
-                                                                <li className={style['dir-item']}>
-                                                                    <a className={`${style['dir-link']} ${style['dir-link-h4']} scroll`} onClick={()=>scrollToAnchor(`${DirItemH4.h4.url}`)}>{DirItemH4.h4.title}</a>
-                                                                </li>
-                                                            </>
-                                                        ))
-                                                    }
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </>
+                                            <ul className="dir-list">
+                                                {
+                                                    dirItem.h3.child.map((DirItemH4) => (
+                                                        <li key={DirItemH4.title} className={style['dir-item']}>
+                                                            <a className={`${style['dir-link']} ${style['dir-link-h4']} scroll`} onClick={()=> {
+                                                                scrollToAnchor(`${DirItemH4.h4.url}`)
+                                                                hideDir()
+                                                            }}>{DirItemH4.h4.title}</a>
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 }
 
-                            </>
+                            </div>
 
                         ))
                     }

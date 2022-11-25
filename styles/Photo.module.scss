@@ -90,6 +90,7 @@
     background-color: violet;
     position: relative;
     cursor:pointer;
+    flex-basis: 108px;
   }
 
   .img_x > img {
@@ -105,6 +106,16 @@
     display: block;
     background-color: lightblue;
   }
+}
+
+@media only screen and (min-width: 768px) {
+  .photo-cta {
+
+    .img_x {
+      flex-basis: 200px;
+    }
+  }
+
 }
 
 @media only screen and (min-width: 1200px) {

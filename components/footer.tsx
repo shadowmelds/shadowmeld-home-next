@@ -1,4 +1,3 @@
-import {ASSETS_URL} from "../data/config";
 import {useState} from "react";
 
 export function Footer({navigations, socials}) {
@@ -24,7 +23,7 @@ export function Footer({navigations, socials}) {
                     (
                         <div key={socialItem.name} className="social-logo-layout">
                             <a className="social-icon" target="_blank"
-                               href={socialItem.url} rel="noreferrer" dangerouslySetInnerHTML={{__html: `<img class=\"social-logo\" src=${ASSETS_URL}/icons/${socialItem.icon} onload=\"SVGInject(this)\" alt=${socialItem.name}>`}}>
+                               href={socialItem.url} rel="noreferrer" dangerouslySetInnerHTML={{__html: `<img class=\"social-logo\" src=/icons/${socialItem.icon} onload=\"SVGInject(this)\" alt=${socialItem.name}>`}}>
                             </a>
                         </div>
                     ))}

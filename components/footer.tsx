@@ -1,10 +1,6 @@
-import {useState} from "react";
+import {SocialSvgIcon} from "../app/social-svg-icon";
 
 export function Footer({navigations, socials}) {
-
-    if (typeof document !== "undefined") {
-        setupPathColor()
-    }
 
     return (
         <footer className="footer app-footer">
@@ -21,48 +17,15 @@ export function Footer({navigations, socials}) {
             <div className="flex-horizontal">
                 {socials.map((socialItem) =>
                     (
-                        <div key={socialItem.name} className="social-logo-layout">
-                            <a className="social-icon" target="_blank"
-                               href={socialItem.url} rel="noreferrer" dangerouslySetInnerHTML={{__html: `<img class=\"social-logo\" src=/icons/${socialItem.icon} onload=\"SVGInject(this)\" alt=${socialItem.name}>`}}>
-                            </a>
-                        </div>
+                        <SocialSvgIcon key={socialItem.name} socialItem={socialItem} />
                     ))}
 
             </div>
             <div className="content has-text-centered">
-                <p>友链 · <a href="https://lollipoppp.com/"
+                <p>友链 · <a href="components/footer"
                            target="_blank" rel="noreferrer">Lollipop</a>
                 </p>
             </div>
         </footer>
     )
-}
-/*
-export function SVGInject({svgPath}) {
-
-    const [icon, setIcon] = useState("")
-
-    loadSVGData(svgPath).then(text => {
-        setIcon(text)
-    })
-
-    return (
-        <div dangerouslySetInnerHTML={
-            {__html: icon}
-        }>
-        </div>
-    )
-}
-
-export async function loadSVGData(svgPath) {
-    let svgFile = await fetch(svgPath)
-    return await svgFile.text()
-}
-*/
-function setupPathColor() {
-
-    const style = document.createElement('style');
-    document.head.appendChild(style);
-    const sheet = style.sheet;
-    sheet.insertRule('.social-logo:hover path{fill: white;}');
 }

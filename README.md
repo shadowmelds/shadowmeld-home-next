@@ -1,65 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project.
-
-## Getting Started
-
-First, run the development server:
+### 本地运行
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-# ShadowmeldHome
+打开 [http://localhost:3000](http://localhost:3000) 
 
-### 依赖环境：
-
-- NodeJS & NPM
+### Stack
+- Next.js
 - TypeScript
 - SASS
 
-### 第三方库：
-
-- [SVG-Inject](https://github.com/iconfu/svg-inject) SVG注入
-- [antvis/X6](https://github.com/antvis/X6) 思维导图
-
-### 同步至Gitee：
-
-[shadowmelds.gitee.io](https://shadowmelds.gitee.io)
+### 编译
 
 ```
-git push gitee master
+next build
 ```
+### 部署
 
-### 环境配置
-
-安装 TS 和 SASS
-
-```
-npm install -g typescript
-npm install -g sass
-```
-
-安装 antvis/X6
+会生成 `.next` 文件夹，将他放入一个空文件夹中比如 website，最后的目录结构应该是 `website\.next`
 
 ```
-npm install @antv/x6 --save
-```
-
----
-
-WebStorm File Watch
-
-- Name `TypeScript`
-- Program `C:\Users\shadowmeld\AppData\Roaming\npm\tsc`
-- Arguments `--target "ES5"`
-- Output paths to refresh `$FileNameWithoutExtension$.js:$FileNameWithoutExtension$.js.map`
-- Working directory `$FileDir$`
-
-部署
-
-```
+cd website
 npm install next react react-dom
 next start
 ```

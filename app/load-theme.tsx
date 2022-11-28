@@ -1,12 +1,8 @@
-import '../styles/globals.css'
-import Layout from "../components/layout";
-
-// This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+"use client"
+export function LoadTheme() {
 
     if (typeof window !== "undefined") {
 
-        init();
         // 当页面返回时加载 亮/暗色主题
         window.addEventListener('pageshow', function(event) {
             // 如果页面是读取缓存
@@ -27,6 +23,6 @@ export default function MyApp({ Component, pageProps }) {
             html.className = 'light'
         }
     }
-    const getLayout = Component.getLayout || ((blog) => blog)
-    return getLayout(<Component {...pageProps} />)
+
+    return<></>
 }

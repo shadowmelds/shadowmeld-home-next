@@ -1,35 +1,19 @@
 import {Header} from "./header";
 import {Footer} from "./footer";
-import {getMainTabs, getNavigations, getSocials} from "../data/data-loader";
 import {useEffect, useState} from "react";
 import {NavDrawer} from "./nav-drawer";
 import Dir from "./dir";
+import {mainTabItem} from "../data/header-tab.data";
+import {navigationItem} from "../data/navigation.data";
+import {socialItem} from "../data/social.data";
 
 export default function Layout({dir = null, children}) {
 
-    const [mainTabsData, setMainTabsData] = useState([])
-    useEffect(() => {
-        setMainTabsData(getMainTabs())
-    }, [])
-
-    const [navigationData, setNavigationData] = useState([])
-    useEffect(() => {
-        setNavigationData(getNavigations())
-    }, [])
-
-    const [socialData, setSocialData] = useState([])
-
-    useEffect(() => {
-        setSocialData(getSocials())
-    }, [])
-
     return (
-        <>
-            {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-            <script type="text/javascript" src="/js/svg-inject.js"></script>
-            <NavDrawer mainTabs={mainTabsData}/>
+        <div id="__next">
+            <NavDrawer mainTabs={mainTabItem}/>
             <div className="content-cta">
-                <Header mainTabs={mainTabsData} />
+                <Header mainTabs={mainTabItem} />
                 {dir != null &&
                     <>
                         <div className="content-cta">
@@ -41,7 +25,7 @@ export default function Layout({dir = null, children}) {
                     </>
                 }
                 {dir == null && children}
-                <Footer navigations={navigationData} socials={socialData} />
+                <Footer navigations={navigationItem} socials={socialItem} />
             </div>
 
             {dir != null &&
@@ -49,6 +33,6 @@ export default function Layout({dir = null, children}) {
                     {dir}
                 </Dir>
             }
-        </>
+        </div>
     )
 }

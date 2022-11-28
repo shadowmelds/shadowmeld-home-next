@@ -1,8 +1,5 @@
 import {loadJson, styleMethod02} from "./utils";
 import {baseSkillItem, SkillData} from "./skill.data";
-import {HeaderTabData, mainTabItem} from "./header-tab.data";
-import {NavigationData, navigationItem} from "./navigation.data";
-import {socialItem} from "./social.data";
 import {DEV_URL, Server_URL} from "./config";
 
 export async function getSkills() {
@@ -21,10 +18,6 @@ export async function getSkills() {
     return skillList
 }
 
-export function getSocials() {
-    return socialItem
-}
-
 export async function getProjects() {
     const request = await fetch(`${DEV_URL}/json/projects.json`);
     const projects = await request.json()
@@ -35,14 +28,6 @@ export async function getPhotos() {
     const request = await fetch(`${DEV_URL}/json/photos.json`);
     const photos = await request.json()
     return photos['photos']
-}
-
-export function getMainTabs(): HeaderTabData[] {
-    return mainTabItem
-}
-
-export function getNavigations(): NavigationData[] {
-    return navigationItem;
 }
 
 export async function getMarkdowns() {

@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 export function loadJson(url, request) {
     let xmlHttp: XMLHttpRequest;
     if (window.XMLHttpRequest) {
@@ -179,25 +181,28 @@ export const scrollToAnchor = (anchorname:any) =>{
     }
 }
 
-/*
-export function SVGInject({svgPath}) {
 
-    const [icon, setIcon] = useState("")
+export const switchTheme = () => {
 
-    loadSVGData(svgPath).then(text => {
-        setIcon(text)
-    })
+    if (typeof document !== 'undefined') {
+        const html = document.querySelector('HTML');
 
-    return (
-        <div dangerouslySetInnerHTML={
-            {__html: icon}
-        }>
-        </div>
-    )
+        var Mode = document.cookie.split(";")[0].split("=")[1];
+        var cookiesExp = new Date(new Date().setMonth(new Date().getMonth() + 1));
+        if (Mode == null || Mode == "undefined" || Mode == "") {
+            if (html.classList.contains('dark')) {
+                document.cookie = `DarkMode=0;path=/;expires=${cookiesExp.toUTCString()}`;
+                html.className = 'light'
+            } else {
+                document.cookie = `DarkMode=1;path=/;expires=${cookiesExp.toUTCString()}`;
+                html.className = 'dark'
+            }
+        } else if (Mode === '0') {
+            document.cookie = `DarkMode=1;path=/;expires=${cookiesExp.toUTCString()}`;
+            html.className = 'dark'
+        } else {
+            document.cookie = `DarkMode=0;path=/;expires=${cookiesExp.toUTCString()}`;
+            html.className = 'light'
+        }
+    }
 }
-
-export async function loadSVGData(svgPath) {
-    let svgFile = await fetch(svgPath)
-    return await svgFile.text()
-}
-*/

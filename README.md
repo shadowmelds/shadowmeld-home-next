@@ -19,7 +19,7 @@ next build
 ```
 ### 部署
 
-会生成 `.next` 文件夹，将他放入一个空文件夹中比如 website，最后的目录结构应该是 `website\.next`
+编译后会生成 `.next` 文件夹，将生成的`.next`放入一个空文件夹中比如 website，最后的目录结构应该是 `website\.next`
 
 ```
 cd website

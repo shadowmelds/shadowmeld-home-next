@@ -108,7 +108,24 @@
       outline-offset: 0.25rem;
     }
   }
+
+  .theme-switcher {
+    display: flex;
+    margin: auto auto var(--space-16) auto;
+    border: 1px solid #707070;
+    border-radius: var(--round-radius);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: fit-content;
+    align-items: center;
+    padding: calc(0.5em - 1px) var(--space-12);
+    cursor: pointer;
+    color: var(--text-primary);
+  }
 }
+
 
 @media only screen and (min-width: 1200px) {
 

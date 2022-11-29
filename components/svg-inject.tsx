@@ -1,6 +1,7 @@
+'use client';
 import {useState} from "react";
 
-export function SVGInject({svgPath}) {
+export function SVGInject({svgPath, style = null}) {
 
     const [icon, setIcon] = useState("")
 
@@ -9,7 +10,7 @@ export function SVGInject({svgPath}) {
     })
 
     return (
-        <div dangerouslySetInnerHTML={
+        <div style={style} dangerouslySetInnerHTML={
             {__html: icon}
         }>
         </div>

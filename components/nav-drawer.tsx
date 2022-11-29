@@ -1,7 +1,11 @@
 import Link from "next/link";
 import style from "../styles/NavDrawer.module.css"
+import {switchTheme} from "../data/utils";
+import {SwitchThemeButton} from "../app/switch-theme-button";
+import {SVGInject} from "./svg-inject";
 
 export function NavDrawer({mainTabs}) {
+
     return (
         <div className={style.navDrawer}>
 
@@ -9,7 +13,7 @@ export function NavDrawer({mainTabs}) {
                     name="Enable dark theme"
                     title="启用深色主题"
                     aria-label="启用深色主题">
-                <img src="/icons/menu_open_black_24dp.svg"/>
+                <SVGInject svgPath="/icons/menu_open_black_24dp.svg"/>
             </button>
             <ul className={style.tabs}>
                 <li className={style.tab}>
@@ -21,12 +25,13 @@ export function NavDrawer({mainTabs}) {
                 {mainTabs.map((tabItem) => (
                     <li key={tabItem.tabId} className={style.tab} id={tabItem.tabId}>
                         <a className={style.tabCta} href={`/${tabItem.tabHref}`}>
-                            <img className={style.icon} src={`/icons/${tabItem.icon}`} alt="icon"/>
+                            <SVGInject svgPath={`/icons/${tabItem.icon}`} style={{width: '24px', height: '24px'}}/>
                             <span>{tabItem.tabText}</span>
                         </a>
                     </li>
                 ))}
             </ul>
+            <SwitchThemeButton />
         </div>
     )
 }

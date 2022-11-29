@@ -165,10 +165,10 @@
     fill-opacity: 1;
   }
 
-  #light-mode {
+  .light-mode {
     display: none;
   }
-  #dark-mode {
+  .dark-mode {
     display: unset;
   }
 }
@@ -189,7 +189,7 @@
   --background-color: #191a23;
   // 项目表面颜色
   --surface-color: #22232e;
-  --surface-color-2: #2d2f31;
+  --surface-color-2: #22232e;
   // 分割线颜色
   --divider: #606164;
   --colors-divider: rgba(235 240 251 / .12);
@@ -227,10 +227,10 @@
     fill-opacity: 0.8;
   }
 
-  #dark-mode {
+  .dark-mode {
     display: none;
   }
-  #light-mode {
+  .light-mode {
     display: unset;
   }
 }

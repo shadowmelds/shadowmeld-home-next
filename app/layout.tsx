@@ -11,7 +11,7 @@ export default function RootLayout({ children }: {
     const nextCookies = cookies();
 
     const mode = nextCookies.get('DarkMode')
-    let theme = 'none'
+    let theme = 'light'
     if (mode != undefined) {
         theme = mode.value === '1' ?'dark':'light'
     }

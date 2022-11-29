@@ -82,7 +82,7 @@ export function ClientContent({url}) {
 
                         <div className={`app-container ${style['app-container']}`}>
 
-                            <a title="返回博客列表" aria-label="back to blog posts list" className={style['back-posts-list']} href="../Page" target="_self">← 返回博客列表</a>
+                            <a title="返回博客列表" aria-label="back to blog posts list" className={style['back-posts-list']} href="../blog" target="_self">← 返回博客列表</a>
                             <div className={`md-content`} />
                         </div>
 

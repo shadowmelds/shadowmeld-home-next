@@ -497,7 +497,7 @@
     }
     th,
     td {
-      border: 1px solid #f4dedd;
+      border: 1px solid var(--border-color);
     }
     thead {
       tr {
@@ -505,10 +505,10 @@
           border-right: 0;
           border-bottom: 0;
           &:last-child {
-            border-right: 1px solid #f4dedd;
+            border-right: 1px solid var(--border-color);
           }
         }
-        color: rgba(0, 0, 0, 0.6);
+        color: var(--blog-text);
         background: #fcfcfc;
         & > th:first-child {
           border-top-left-radius: 10px;
@@ -521,7 +521,7 @@
         }
 
         th {
-          background-color: #f7f2f3;
+          background-color: var(--code-background);
         }
       }
     }
@@ -531,14 +531,14 @@
           border-right: 0;
           &:first-child {
             border-right: 0;
-            color: #232427;
+            color: var(--text-secondary);
           }
           &:nth-child(2) {
-            color: #232427;
+            color: var(--text-secondary);
           }
           &:last-child {
-            border-right: 1px solid #f4dedd;
-            color: #232427;
+            border-right: 1px solid var(--border-color);
+            color: var(--text-secondary);
           }
         }
         &:nth-child(even) {

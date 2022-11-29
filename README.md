@@ -1,3 +1,8 @@
+### Stack
+- Next.js
+- TypeScript
+- SASS
+
 ### 本地运行
 
 ```bash
@@ -6,11 +11,6 @@ npm run dev
 ```
 
 打开 [http://localhost:3000](http://localhost:3000) 
-
-### Stack
-- Next.js
-- TypeScript
-- SASS
 
 ### 编译
 

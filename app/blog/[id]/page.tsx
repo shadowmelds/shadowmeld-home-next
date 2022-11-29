@@ -3,7 +3,7 @@ import {ClientContent} from "./client-content";
 
 export default function Page({params}) {
 
-    const url = `/markdown/${params.id}.md`
+    const url = `/asset/posts/${params.id}.md`
 
     return (
         <>

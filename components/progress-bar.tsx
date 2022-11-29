@@ -1,3 +1,4 @@
+'use client';
 export function ProgressBar({mode='indeterminate'}) {
     return (
         <>

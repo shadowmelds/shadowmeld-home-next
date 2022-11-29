@@ -24,7 +24,7 @@ export function Posts({allYears, selectedMarkdowns}) {
                                                 <a key={markdown.url} className={`${style.boox} ${style['blog-link']}`} href={`/blog/${markdown.url.replace(/\.md$/, '')}`}>
                                                     <div className={style['item']}>
                                                         <div className={style['image-layout']} id={`${markdown.url.replace(/\.md$/, '')}`}
-                                                             style={{backgroundImage: `url('/markdown/${markdown.image}')`}}></div>
+                                                             style={{backgroundImage: `url('/asset/posts/img/${markdown.image}')`}}></div>
                                                         <div className={style['blog-message-cta']}><h3
                                                             className={`title ${style.title} is-4 ${style['mat-h4']}`}>{markdown.title}</h3><p
                                                             className={style.content}>{markdown.content}</p><p className={style.date}><span

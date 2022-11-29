@@ -14,18 +14,18 @@ export const navigationItem: NavigationData[] = [
     // },
     {
         name: "博客",
-        href: "blog"
+        href: "/blog"
     },
     {
         name: "照片",
-        href: "photo"
+        href: "/photo"
     },
     {
         name: "组件",
-        href: "component"
+        href: "/component"
     },
     {
         name: "实验室",
-        href: "labs"
+        href: "/labs"
     },
 ]

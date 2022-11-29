@@ -1,0 +1,10 @@
+{
+    "projects": [
+        {
+            "icon": "project_shadowmeld_site.png",
+            "name": "shadowmeld-home-next",
+            "content": "目前这个网站使用Next13开发",
+            "url": "https://github.com/shadowmelds/shadowmeld-home-next"
+        }
+    ]
+}

@@ -15,7 +15,7 @@ export function Preview({previewPhoto, onPreview}) {
                 <div className={style['photo-preview-linear']}>
                     <div className={style['photo-preview-cta']}>
 
-                        <img className={style['photo-preview']} id={style['photo-preview']} src={`/photos/${previewPhoto.photoUrl}`} alt={previewPhoto.description}/>
+                        <img className={style['photo-preview']} id={style['photo-preview']} src={`/asset/photos/${previewPhoto.photoUrl}`} alt={previewPhoto.description}/>
 
                         <div className={style['photo-text']}>
 

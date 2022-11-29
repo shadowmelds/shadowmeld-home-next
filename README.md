@@ -3,6 +3,18 @@
 - TypeScript
 - SASS
 
+### 目录结构
+
+```
+.
+|____app # 页面
+|____components # 通用组件
+|____data # 数据类和工具类
+|____public # 静态图标、图片、文件
+| |____asste # 网站呈现数据的静态资源 
+|____style # CSS 主题
+```
+
 ### 本地运行
 
 ```bash

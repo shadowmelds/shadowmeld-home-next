@@ -4,7 +4,7 @@ export interface SocialData {
     icon: string
 }
 
-export const socialItem = [
+export const socialItem: SocialData[] = [
     {
         name: "Instagram",
         url: "https://www.instagram.com/andrewmartin791/",

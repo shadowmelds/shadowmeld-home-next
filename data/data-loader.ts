@@ -19,24 +19,24 @@ export async function getSkills() {
 }
 
 export async function getProjects() {
-    const request = await fetch(`${DEV_URL}/json/projects.json`);
+    const request = await fetch(`${DEV_URL}/asset/project/projects.json`);
     const projects = await request.json()
     return projects['projects']
 }
 
 export async function getPhotos() {
-    const request = await fetch(`${DEV_URL}/json/photos.json`);
+    const request = await fetch(`${DEV_URL}/asset/photos/photos.json`);
     const photos = await request.json()
     return photos['photos']
 }
 
 export async function getMarkdowns() {
-    const request = await fetch(`${DEV_URL}/json/markdowns.json`);
+    const request = await fetch(`${DEV_URL}/asset/posts/posts.json`);
     return await request.json()
 }
 
 export async function getServerMarkdowns() {
-    const request = await fetch(`${Server_URL}/json/markdowns.json`);
+    const request = await fetch(`${Server_URL}/asset/posts/posts.json`);
     return await request.json()
 }
 

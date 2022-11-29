@@ -5,7 +5,7 @@ export function ImgX({photo, onClick}) {
     return (
         <div className={style['img_x']} onClick={onClick}>
             <i></i>
-            <img src={`/photos/${photo.photoUrl}`} alt={"图片"}/>
+            <img src={`/asset/photos/${photo.photoUrl}`} alt={"图片"}/>
         </div>
     )
 }

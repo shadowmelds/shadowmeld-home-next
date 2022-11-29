@@ -36,13 +36,8 @@ yarn-error.log*
 next-env.d.ts
 
 .idea
-/public/js/jsm
-/public/js/three.js
-/public/js/three.module.js
-/public/markdown
-/public/music
-/public/photos
-/public/model
+
+/public/asset
 
 *.css
 *.css.map

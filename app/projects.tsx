@@ -85,7 +85,7 @@ export function ProjectChip({project}) {
             <div className={style.item}>
                 <img className={style['project-icon']}
                      alt="ProjectIcon"
-                     src={`/img/${project.icon}`}/>
+                     src={`/asset/project/img/${project.icon}`}/>
                 <div className={style['text-layout']}>
                     <h2 className='mat-h2'>{project.name}</h2>
                     <p className={style.description}>{project.content}</p>

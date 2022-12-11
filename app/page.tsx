@@ -1,5 +1,4 @@
 import Layout from "../components/layout";
-import style from "../styles/Home.module.css";
 import React from "react";
 import {Responsive} from "./responsive-cta";
 import {getProjects, getSkills} from "../data/data-loader";

@@ -1,0 +1,45 @@
+.material-button {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  text-align: center;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  overflow: visible;
+  font-family: Roboto,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease-in-out;
+  margin: var(--space-8);
+}
+
+.basic {
+  background: transparent;
+  color: var(--accent);
+
+  &:hover {
+    background-color: var(--toolbar-highlight);
+  }
+}
+
+.raised {
+  background-color: var(--accent);
+  color: var(--reverse-text-primary);
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+.flat {
+  background-color: var(--accent);
+  color: var(--reverse-text-primary)
+}

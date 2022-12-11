@@ -1,0 +1,29 @@
+.dialog-mask {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(#21202F, .92);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  padding: var(--space-16) ;
+  -webkit-transition: opacity .2s cubic-bezier(.4,0,.2,1),visibility .2s linear;
+  transition: opacity .2s cubic-bezier(.4,0,.2,1),visibility .2s linear;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 3;
+
+  .dialog {
+    min-width: 74%;
+    overflow: auto;
+    margin: auto;
+    background-color: var(--surface-color);
+    padding: var(--space-40) var(--space-16);
+    border-radius: var(--space-8);
+
+    .dialog-cta {
+      text-align: center;
+      margin: 0 auto 0 auto;
+    }
+  }
+}

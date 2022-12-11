@@ -1,0 +1,73 @@
+
+.snack-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: auto;
+  box-sizing: border-box;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+
+  &.show {
+    animation-name: page-animation;
+    animation-duration: 300ms;
+    animation-delay: 150ms;
+    animation-fill-mode: backwards;
+  }
+  &.removing {
+    -webkit-animation: fadeOut 500ms;
+    -moz-animation: fadeOut 500ms;
+    animation: fadeOut 500ms;
+  }
+
+  .snack-bar-container {
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 24px;
+    max-width: 33vw;
+    min-width: 344px;
+    padding: 4px 16px;
+    min-height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 20px;
+    opacity: 1;
+    color: #ffffffb3;
+    background: #323232;
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    font-family: Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+
+    .snack-bar-content {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.975);
+      opacity: 0;
+    }
+  }
+
+  @keyframes page-animation {
+    0% {
+      transform: scale(0.975);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

@@ -16,7 +16,7 @@ export function ClientContent({photosData}) {
             </div>
 
             <Preview previewPhoto={previewPhoto} onPreview={(value) => {
-                setPreviewPhoto(null)
+                setPreviewPhoto(value)
             }}/>
         </>
     )

@@ -21,7 +21,7 @@
     top: 0;
     height: 100vh;
     margin: auto;
-    padding: var(--space-32) ;
+    padding: var(--space-16) ;
     -webkit-transition: opacity .2s cubic-bezier(.4,0,.2,1),visibility .2s linear;
     transition: opacity .2s cubic-bezier(.4,0,.2,1),visibility .2s linear;
     -webkit-tap-highlight-color: transparent;
@@ -37,7 +37,7 @@
     align-self: center;
     margin: auto;
     background-color: var(--surface-color);
-    padding: var(--space-40) var(--space-56);
+    padding: var(--space-40) var(--space-16);
     border-radius: var(--space-8);
   }
 
@@ -114,6 +114,14 @@
     .img_x {
       flex-basis: 200px;
     }
+
+    .dialog-mask {
+      padding: var(--space-32) ;
+    }
+    .photo-preview-linear {
+      padding: var(--space-40) var(--space-56);
+    }
+
   }
 
 }

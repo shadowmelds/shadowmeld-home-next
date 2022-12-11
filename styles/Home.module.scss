@@ -244,50 +244,54 @@
 
   .item {
     position: relative;
-    background-color: var(--surface-color);
     color: var(--text-secondary);
-    border-radius: 0.5em;
-    padding: 1em 1.2em;
-    display: flex;
     margin: var(--space-16) var(--space-8);
-    //box-shadow: 0 0 0 0.1em var(--border-color);
-    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.2s ease-in-out 0s;
     min-width: 0;
+    border: 1px solid rgba(var(--colors-toolbar-glow) / 0.12);
 
-    &::after {
-      content: ""; // 不知道为什么删掉这个就没阴影了
-      border-radius: 5px;
-      position: absolute;
-      z-index: -1;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    &:hover, &:focus {
+      border: 1px solid rgba(var(--colors-toolbar-glow) / 0.24);
+      box-shadow: 0 0 8px 2px rgba(var(--colors-toolbar-glow) / 0.28);
     }
 
-    &:hover {
-      box-shadow: 0 0 0 0 #E1E2E4;
-      -webkit-transform: scale(1.25, 1.25);
-      transform: scale(1, 1);
+    & > * {
+      transition: all 0.3s ease-in-out 0s;
     }
-
-    &:hover::after {
-      opacity: 1;
-    }
-
-    .item:hover::after {
-      opacity: 1;
-    }
-
   }
 
-  .list-item .list {
-    color: #333;
+  .dev-item {
+    display: flex;
+    background-color: var(--surface-color);
+    padding: 1em 1.2em;
+    border-radius: var(--space-16);
+  }
+
+  .design-item {
+    border-radius: var(--space-16);
+    background-color: var(--surface-color);
+    overflow: hidden;
+
+    img {
+      background-color: var(--background-color);
+    }
+
+    .title {
+      letter-spacing: normal;
+      font-size: var(--fontSizes-sm);
+      color: var(--text-primary);
+      margin: 0;
+      padding: 0 1em;
+      white-space:nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .description {
+      margin: 0 0 4px;
+      padding: 0 1em 0.6em 1em;
+      color: var(--text-secondary);
+    }
   }
 }
 

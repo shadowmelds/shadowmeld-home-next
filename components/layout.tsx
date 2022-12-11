@@ -1,6 +1,5 @@
 import {Header} from "./header";
 import {Footer} from "./footer";
-import {useEffect, useState} from "react";
 import {NavDrawer} from "./nav-drawer";
 import Dir from "./dir";
 import {mainTabItem} from "../data/header-tab.data";

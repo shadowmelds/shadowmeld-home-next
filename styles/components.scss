@@ -358,36 +358,3 @@
   }
 }
 
-.material-button {
-  box-sizing: border-box;
-  position: relative;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  outline: none;
-  border: none;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  display: inline-block;
-  white-space: nowrap;
-  text-decoration: none;
-  vertical-align: baseline;
-  text-align: center;
-  margin: 0;
-  min-width: 64px;
-  line-height: 36px;
-  padding: 0 16px;
-  border-radius: 4px;
-  overflow: visible;
-  background: transparent;
-  font-family: Roboto,Helvetica Neue,sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.25s ease-in-out;
-  color: var(--accent);
-
-  &:hover {
-    font-weight: bold;
-    background-color: var(--toolbar-highlight);
-  }
-}
-
